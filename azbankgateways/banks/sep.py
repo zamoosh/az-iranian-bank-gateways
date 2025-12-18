@@ -39,7 +39,7 @@ class SEP(BaseBank):
         data = {
             "action": "Token",
             "Amount": self.get_gateway_amount(),
-            "TerminalId": self._merchant_code,
+            "TerminalId": self._terminal_code,
             "ResNum": self.get_tracking_code(),
             "RedirectURL": self._get_gateway_callback_url(),
             "CellNumber": self.get_mobile_number(),
