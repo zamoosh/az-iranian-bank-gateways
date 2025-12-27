@@ -41,7 +41,7 @@ class SEP(BaseBank):
             "Amount": self.get_gateway_amount(),
             "TerminalId": self._terminal_code,
             "ResNum": self.get_tracking_code(),
-            "RedirectURL": self._get_gateway_callback_url(),
+            "RedirectURL": "https://vidarayan.com/coreservice/pwa/",
             "CellNumber": self.get_mobile_number(),
         }
         data.update(self.get_custom_data())
