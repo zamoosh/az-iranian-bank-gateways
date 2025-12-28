@@ -106,7 +106,7 @@ class SEP(BaseBank):
 
     def get_verify_data(self):
         super(SEP, self).get_verify_data()
-        return {"RefNum": self.get_reference_number(), "TerminalNumber": self._merchant_code}
+        return {"RefNum": self.get_reference_number(), "TerminalNumber": self._terminal_code}
 
     def prepare_verify(self, tracking_code):
         super(SEP, self).prepare_verify(tracking_code)
