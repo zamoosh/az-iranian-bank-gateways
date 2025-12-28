@@ -115,7 +115,6 @@ class SEP(BaseBank):
         super(SEP, self).verify(transaction_code)
         data = self.get_verify_data()
         result = self._send_data(api=self._verify_api_url, data=data)
-        print("result of verify with bank: ", result)
         if result.get('ResultCode') == 0:
             self._set_payment_status(PaymentStatus.COMPLETE)
         else:

@@ -13,7 +13,6 @@ from azbankgateways.exceptions import AZBankGatewaysException
 def callback_view(request):
     bank_type = request.GET.get("bank_type", None)
     identifier = request.GET.get("identifier", None)
-    print("comming from bank", request)
 
     if not bank_type:
         logging.critical("Bank type is required. but it doesnt send.")
@@ -25,8 +24,6 @@ def callback_view(request):
         bank.verify_from_gateway(request)
     except AZBankGatewaysException:
         logging.exception("Verify from gateway failed.", stack_info=True)
-        print("Verify from gateway failed.")
-    print("redirecting to client", bank.redirect_client_callback())
     return bank.redirect_client_callback()
 
 
